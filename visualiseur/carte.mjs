@@ -1,5 +1,12 @@
-const CLE_VALEUR = /^\s*([a-z_]+):\s*(.*)$/;
-const ETAPE = /^\s*-\s+id:\s*(.+)$/;
+const SECTION = /^([a-z][a-z0-9_]*):\s*(?:#.*)?$/;
+const CLE_VALEUR = /^\s*([a-z][a-z0-9_]*):\s*(.*)$/;
+const DEBUT_ETAPE = /^\s*-\s+([a-z][a-z0-9_]*):\s*(.*)$/;
+
+// Retire un commentaire de fin de ligne, puis les guillemets éventuels.
+function valeur(brut) {
+  const utile = brut.replace(/(^|\s)#.*$/, "$1").trim();
+  return utile.replace(/^(["'])(.*)\1$/, "$2");
+}
 
 export function lireCarteYml(texte) {
   const carte = { theme: {}, carte: {}, etapes: [] };
@@ -10,28 +17,30 @@ export function lireCarteYml(texte) {
     const contenu = ligne.trim();
     if (!contenu || contenu.startsWith("#")) continue;
 
-    if (!ligne.startsWith(" ") && contenu.endsWith(":")) {
-      section = contenu.slice(0, -1);
+    if (!ligne.startsWith(" ") && SECTION.test(contenu)) {
+      section = contenu.match(SECTION)[1];
       etape = null;
       continue;
     }
 
     if (section === "etapes") {
-      const debut = ligne.match(ETAPE);
+      // Une étape commence à son premier tiret, quelle que soit la clé écrite
+      // en premier : « - id: » et « - titre: » sont l'un et l'autre valides.
+      const debut = ligne.match(DEBUT_ETAPE);
       if (debut) {
-        etape = { id: debut[1].trim() };
+        etape = { [debut[1]]: valeur(debut[2]) };
         carte.etapes.push(etape);
         continue;
       }
 
       const propriete = ligne.match(CLE_VALEUR);
-      if (etape && propriete) etape[propriete[1]] = propriete[2].trim();
+      if (etape && propriete) etape[propriete[1]] = valeur(propriete[2]);
       continue;
     }
 
     const propriete = ligne.match(CLE_VALEUR);
     if (propriete && (section === "theme" || section === "carte")) {
-      carte[section][propriete[1]] = propriete[2].trim();
+      carte[section][propriete[1]] = valeur(propriete[2]);
     }
   }
 

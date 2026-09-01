@@ -6,16 +6,22 @@
 # Voir specifications/format-carte.md.
 
 theme:
-  id: mon_theme          # minuscules, chiffres et tirets bas
-  titre: Mon thème       # le nom lisible, tel qu'on le prononce
+  # id : minuscules ASCII, chiffres et tirets bas, sans accent.
+  id: mon_theme
+  # titre : le nom lisible, tel qu'on le prononce.
+  titre: Mon thème
 
 carte:
-  statut: brouillon      # brouillon | proposition | stable
-  version: developpement # developpement, ou le nom d'une version figée
+  # statut : brouillon | proposition | stable
+  statut: brouillon
+  # version : developpement, ou le nom d'une version figée.
+  version: developpement
 
 etapes:
   # L'ordre de la liste est celui de la montée : chaque étape
-  # s'appuie sur celles qui la précèdent.
+  # s'appuie sur celles qui la précèdent. Cet ordre est une
+  # convention de départ — si deux étapes n'ont pas d'ordre entre
+  # elles, le signaler plutôt que trancher (voir PRINCIPES.md, 1).
   - id: premiere_etape
     titre: La première chose que l'on sait faire
 

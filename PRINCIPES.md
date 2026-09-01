@@ -4,15 +4,27 @@ Ce fichier dit ce que le dépôt cherche à faire, et surtout ce qu'il s'interdi
 Il est lui-même discutable : c'est le premier endroit où ouvrir une discussion
 si quelque chose y sonne faux.
 
-## 1. La validation grimpe
+## 1. La ligne est un tremplin, pas une thèse
 
-Un parcours n'est pas une liste de cases à cocher indépendantes. Les étapes se
-portent les unes les autres : celle du haut suppose acquises celles qui la
-soutiennent. C'est le sens du mot *grimpante* — on lit une carte de bas en haut,
-et l'ordre n'est pas décoratif.
+Une carte se présente aujourd'hui comme une suite ordonnée : les étapes se
+portent les unes les autres, on la lit de bas en haut, et l'ordre n'est pas
+décoratif. **L'ordre des étapes dans `etapes.yml` est donc une information**, pas
+une mise en page : le déplacer, c'est modifier la carte.
 
-Conséquence pratique : **l'ordre des étapes dans `etapes.yml` est une
-information**, pas une mise en page. Le déplacer, c'est modifier la carte.
+Mais cette ligne unique est une convention de départ, et personne ne prétend
+qu'elle suffira. Les apprentissages ne se laissent pas toujours ranger avant ou
+après : deux maîtrises peuvent être simplement **incomparables**, un même savoir
+peut progresser à des rythmes différents selon qu'on le calcule, le représente,
+le raisonne, le modélise ou l'explique. La ligne écrasera ces cas.
+
+C'est voulu. On commence par une suite ordonnée précisément pour **repérer où
+elle casse** : les endroits où deux étapes n'ont pas d'ordre, où un chemin se
+divise, où l'on revient sur ses pas. Ces ruptures ne sont pas des accidents à
+corriger dans le YAML, ce sont les résultats que le travail collectif cherche.
+Les signaler est la contribution la plus utile que l'on puisse apporter.
+
+Autrement dit : la linéarité est ici l'hypothèse que l'on met à l'épreuve, pas
+le principe que l'on défend.
 
 ## 2. Décrire ce que l'on sait faire, pas ce que l'on a vu
 
@@ -47,8 +59,18 @@ reprise, contestée, remplacée — pas réécrite en silence.
 
 Les cartes décrivent des parcours, jamais des personnes. Le dépôt ne contient et
 ne contiendra **aucune donnée d'élève** : ni nom, ni classe, ni résultat, ni
-suivi individuel. Ce qui se validerait pour un élève donné relève d'un autre
-outil, hors de ce dépôt public.
+suivi individuel.
+
+La frontière est nette. Le dépôt tient **la liste** : les étapes, leur ordre,
+leurs identifiants, les versions. Ce qu'une validation grimpante produit face à
+un élève — sa position, le déplacement accompli, la prochaine marche — dépend de
+cet élève et de ce qui a été observé de lui : cela se calcule ailleurs, dans la
+classe ou dans un autre outil, et n'entre jamais ici.
+
+Le dépôt est donc le **référentiel que ce dehors cite**. C'est de là que vient
+son seul vrai engagement : des identifiants qui ne bougent pas, des versions
+citables, et une correspondance quand la numérotation change (voir
+[`specifications/gestion-versions.md`](specifications/gestion-versions.md)).
 
 ## 7. Collaboratif veut dire discutable
 

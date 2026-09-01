@@ -57,7 +57,10 @@ etapes:
     titre: Dénombrer une collection
 ```
 
-L'ordre de la liste est celui de la montée. Le format complet est décrit dans
+L'ordre de la liste est celui de la montée, et le rang d'une étape est son
+**palier**. Cet ordre unique est une convention de départ que l'on cherche
+justement à mettre en défaut : les identifiants, eux, ne bougent jamais. Le
+format complet est décrit dans
 [`specifications/format-carte.md`](specifications/format-carte.md).
 
 ## Commencer une carte

@@ -6,7 +6,8 @@ Une carte est un dossier de `cartes/` :
 cartes/<mon-theme>/
 ├── README.md     # ce que la carte raconte, et ce qui y reste incertain
 ├── etapes.yml    # la carte elle-même
-└── versions/     # les états figés (voir gestion-versions.md)
+└── versions/     # les états figés et leurs correspondances
+                  # (voir gestion-versions.md)
 ```
 
 Le nom du dossier est en minuscules avec des tirets : `nombres-entiers`.
@@ -67,6 +68,19 @@ Une liste, non vide, d'entrées à deux clés :
 **L'ordre de la liste porte du sens** : c'est la montée, du plus élémentaire au
 plus assuré. Réordonner la liste modifie la carte et se justifie comme tel.
 
+Le rang d'une étape dans cette liste est son **palier** (compté à partir de 1).
+Un palier ne vaut que pour une version donnée de la carte ; l'`id`, lui, ne
+bouge pas. Voir [`vocabulaire.md`](vocabulaire.md), « Palier ».
+
+Cet ordre unique est une **convention de départ**, pas une thèse : il oblige à
+ranger l'une après l'autre deux étapes qui n'ont peut-être aucun ordre entre
+elles. Rencontrer ce cas n'est pas une gêne à contourner discrètement, c'est un
+résultat à signaler (voir [`../PRINCIPES.md`](../PRINCIPES.md), point 1).
+
+**L'ordre des clés est libre** à l'intérieur d'une étape : `id` puis `titre`, ou
+l'inverse. Les **commentaires** sont permis, sur leur propre ligne ou en fin de
+ligne après une espace ; un titre qui contient un `:` se met entre guillemets.
+
 Les identifiants d'étapes sont stables : une fois la carte passée en
 `proposition`, on ne renomme plus un `id` — on en ajoute un nouveau et l'on
 retire l'ancien, ce qui laisse une trace dans l'historique. Le `titre`, lui,
@@ -87,7 +101,9 @@ Une carte est valide si :
 
 Aucun contrôle automatique n'est encore branché sur le dépôt : ces règles se
 vérifient à la relecture. Un script de validation fait partie des choses à
-écrire.
+écrire. En attendant, le lecteur YAML du visualiseur
+(`visualiseur/carte.mjs`) refuse une carte dont les informations générales ou
+les étapes sont incomplètes — c'est un garde-fou, pas une validation.
 
 ## Ce que le format ne dit pas encore
 
@@ -96,7 +112,9 @@ chacun mérite sa discussion avant d'être comblé :
 
 - **Les prérequis un à un.** Seul l'ordre global est exprimé. Une carte où deux
   étapes sont réellement indépendantes ne peut pas le dire : elle doit les
-  ranger l'une après l'autre comme si l'une portait l'autre.
+  ranger l'une après l'autre comme si l'une portait l'autre. C'est le manque le
+  plus intéressant, puisque c'est celui que le travail collectif est censé
+  mettre en évidence.
 - **Les embranchements.** Le format décrit une montée unique, pas un graphe.
 - **Les niveaux et cycles.** Rien ne relie une étape à un âge ou à une classe.
 - **Les exemples et critères de réussite.** Un titre d'étape porte seul tout le
