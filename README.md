@@ -13,6 +13,15 @@ proportionnalité…) sous la forme d'une suite d'**étapes** ordonnées. Rien d
 plus pour l'instant : le format reste volontairement pauvre tant que l'usage
 n'a pas montré ce qui lui manque.
 
+## Discussion en cours
+
+La première carte pilote porte sur les **nombres entiers**. Ses trois premières
+étapes sont un point de départ à interroger, et non une progression déjà
+figée : [discuter leur formulation, leur ordre et les étapes manquantes](https://github.com/w0uf/validation-grimpante/discussions/1).
+
+Les observations de terrain, exemples de situations, objections et références
+didactiques sont les bienvenus.
+
 ## Ce que contient le dépôt
 
 | Chemin | Rôle |
