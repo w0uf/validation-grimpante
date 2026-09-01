@@ -1,0 +1,23 @@
+# Modèle de carte. Copier ce dossier sous cartes/<mon-theme>/,
+# puis remplacer les valeurs ci-dessous.
+#
+# Champs obligatoires : theme.id, theme.titre, carte.statut,
+# carte.version, et au moins une étape (id + titre).
+# Voir specifications/format-carte.md.
+
+theme:
+  id: mon_theme          # minuscules, chiffres et tirets bas
+  titre: Mon thème       # le nom lisible, tel qu'on le prononce
+
+carte:
+  statut: brouillon      # brouillon | proposition | stable
+  version: developpement # developpement, ou le nom d'une version figée
+
+etapes:
+  # L'ordre de la liste est celui de la montée : chaque étape
+  # s'appuie sur celles qui la précèdent.
+  - id: premiere_etape
+    titre: La première chose que l'on sait faire
+
+  - id: deuxieme_etape
+    titre: Ce que l'on sait faire ensuite

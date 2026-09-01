@@ -1,0 +1,17 @@
+theme:
+  id: nombres_entiers
+  titre: Nombres entiers
+
+carte:
+  statut: brouillon
+  version: developpement
+
+etapes:
+  - id: reconnaitre_petites_quantites
+    titre: Reconnaître de petites quantités
+
+  - id: constituer_collection
+    titre: Constituer une collection demandée
+
+  - id: denombrer_collection
+    titre: Dénombrer une collection
