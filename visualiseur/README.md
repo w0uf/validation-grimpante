@@ -1,6 +1,7 @@
 # Visualiseur
 
-Rien n'est encore écrit ici. Ce dossier réserve la place et fixe l'intention.
+Ce dossier contient un premier prototype statique. Il affiche les étapes d'une
+carte de bas en haut et calcule leur numéro à partir de leur ordre dans le YAML.
 
 ## Ce que ce sera
 
@@ -26,9 +27,16 @@ dépôt Git.
 - Signale visiblement `statut: brouillon` et `version: developpement` : on ne
   doit pas pouvoir confondre un essai et une carte stable.
 
-## Avant d'écrire la moindre ligne
+## Lancer le prototype
 
-Le format bougera encore (voir la fin de
-[`specifications/format-carte.md`](../specifications/format-carte.md)). Écrire
-le visualiseur maintenant, c'est figer par accident un format qui n'a pas fini
-d'être discuté. Il attendra qu'une carte au moins soit passée en `stable`.
+Depuis la racine du dépôt :
+
+```bash
+python3 -m http.server 8000
+```
+
+Puis ouvrir <http://localhost:8000/visualiseur/>.
+
+Le petit lecteur YAML de `carte.mjs` ne reconnaît volontairement que le format
+minimal documenté aujourd'hui. Il devra évoluer avec la spécification : ce
+prototype observe le format, il ne le fige pas.

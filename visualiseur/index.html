@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validation grimpante — Visualiseur</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="surtitre">Validation grimpante</p>
+      <h1>Visualiseur de cartes</h1>
+      <p class="introduction">
+        Les numéros indiquent une position dans la carte affichée. Les
+        identifiants, eux, restent stables lorsque la carte évolue.
+      </p>
+    </header>
+
+    <section class="choix" aria-labelledby="choix-titre">
+      <label id="choix-titre" for="carte">Carte affichée</label>
+      <select id="carte">
+        <option value="../cartes/nombres-entiers/etapes.yml">Nombres entiers</option>
+      </select>
+    </section>
+
+    <section id="rendu" aria-live="polite">
+      <p>Chargement de la carte…</p>
+    </section>
+  </main>
+
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
