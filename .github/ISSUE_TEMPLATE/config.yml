@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Discussion générale
+    url: https://github.com/w0uf/validation-grimpante/discussions
+    about: Pour proposer un thème ou discuter les principes avant de modifier une carte.

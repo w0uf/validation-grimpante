@@ -1,0 +1,77 @@
+name: Discuter une étape
+description: Proposer, déplacer, découper, fusionner ou contester une étape d'une carte.
+title: "[Étape] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de partir d'une observation, d'une tâche ou d'un raisonnement explicite.
+        La carte est une proposition : contester son ordre fait partie du travail normal.
+
+  - type: input
+    id: carte
+    attributes:
+      label: Carte concernée
+      description: Indiquer le thème et, si elle existe, la version utilisée.
+      placeholder: "Nombres entiers — développement"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modification
+    attributes:
+      label: Nature de la proposition
+      options:
+        - Ajouter une étape
+        - Insérer une étape entre deux étapes existantes
+        - Déplacer une étape
+        - Reformuler une étape
+        - Découper une étape
+        - Fusionner plusieurs étapes
+        - Retirer une étape
+        - Contester l'ordre général
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Proposition
+      description: Formuler l'étape par une action observable, de préférence avec un verbe à l'infinitif.
+      placeholder: "Exemple : Comparer deux petites quantités sans les dénombrer."
+    validations:
+      required: true
+
+  - type: textarea
+    id: position
+    attributes:
+      label: Position proposée dans la montée
+      description: Entre quelles étapes cette proposition devrait-elle apparaître, et pourquoi ?
+      placeholder: |
+        Après : Reconnaître de petites quantités
+        Avant : Constituer une collection demandée
+    validations:
+      required: true
+
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observation, tâche ou exemple
+      description: Décrire ce qui permet de distinguer cette étape des étapes voisines.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources ou repères éventuels
+      description: Référence didactique, programme, expérimentation ou pratique de classe. Facultatif.
+
+  - type: checkboxes
+    id: confidentialite
+    attributes:
+      label: Données d'élèves
+      options:
+        - label: Je confirme que cette contribution ne contient aucune donnée permettant d'identifier un élève.
+          required: true

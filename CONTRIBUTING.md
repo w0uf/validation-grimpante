@@ -14,6 +14,11 @@ une objection de fond. Il n'est pas nécessaire de savoir se servir de Git pour
 
 Dans le doute, une discussion coûte moins cher qu'une carte écrite pour rien.
 
+Pour une étape précise, le formulaire **Discuter une étape** guide la
+contribution : carte concernée, nature de la modification, position proposée,
+observation et sources éventuelles. Il est accessible depuis le bouton
+**New issue** du dépôt et ne demande aucune connaissance de Git.
+
 ## Ajouter une carte
 
 1. Copier `cartes/modele/` sous `cartes/<mon-theme>/`. Le nom du dossier est en
